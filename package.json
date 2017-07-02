@@ -1,0 +1,24 @@
+{
+  "name": "gabble",
+  "version": "1.0.0",
+  "description": "twitter Clone practice with databases.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RagyHutch/gabble-week6-project.git"
+  },
+  "author": "Robert Hutchins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RagyHutch/gabble-week6-project/issues"
+  },
+  "homepage": "https://github.com/RagyHutch/gabble-week6-project#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mustache-express": "^1.2.5"
+  }
+}
