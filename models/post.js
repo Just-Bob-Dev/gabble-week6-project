@@ -2,12 +2,11 @@
 module.exports = function(sequelize, DataTypes) {
   var post = sequelize.define('post', {
     content: DataTypes.STRING
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
-  });
+  }, {});
+
+  post.associate = function(models){
+    post.belongsTo(models.user, {as:'user', foreignKey: 'userId'});
+  }
+
   return post;
 };

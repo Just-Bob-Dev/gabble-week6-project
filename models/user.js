@@ -3,12 +3,11 @@ module.exports = function(sequelize, DataTypes) {
   var user = sequelize.define('user', {
     name: DataTypes.STRING,
     password: DataTypes.STRING
-  }, {
-    classMethods: {
-      associate: function(models) {
-        // associations can be defined here
-      }
-    }
-  });
+  }, { });
+
+  user.prototype.fullName = function(){
+    return`${this.name}`;
+  }
+
   return user;
 };
