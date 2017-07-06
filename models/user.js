@@ -5,8 +5,8 @@ module.exports = function(sequelize, DataTypes) {
     password: DataTypes.STRING
   }, { });
 
-  user.prototype.fullName = function(){
-    return`${this.name}`;
+  user.associate = function(models){
+    user.hasMany(models.like, {as: 'userLike', foreignKey: 'userId'})
   }
 
   return user;

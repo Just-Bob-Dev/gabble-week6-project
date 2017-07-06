@@ -45,8 +45,14 @@ router.get('/homepage', function(req, res){
     include: [{
       model: models.user,
       as: 'user'
-    }]
+    },
+    {
+      model: models.like,
+      as: 'postLikes'
+    }
+  ]
   }).then(function(posts){
+    console.log()
       res.render('gabbleHome', {userPosts: posts});
     });
   })
@@ -61,6 +67,7 @@ router.get('/createUser', function(req, res){
   res.render('createUser');
 })
 
+//Builds a new user to add to database.
 router.post('/createUser', function(req, res){
   let password1 = req.body.pass1;
   let password2 = req.body.pass2;
@@ -94,6 +101,29 @@ router.post('/postGab', function(req, res){
   res.redirect('/homepage');
 })
 
+//adds Likes to database
+router.post('/likes', function(req, res){
+  let newLike = models.like.build({
+    userId : req.session.user.id,
+    postId : req.body.like_button
+  })
+  console.log(newLike);
+  newLike.save();
+  res.redirect('/homepage');
+})
+
+//Deletes post from database.
+router.post('/delete', function(req, res){
+  models.post.destroy({
+    where: {
+      id:req.body.delete_button
+    }
+  }).then(function(){
+    res.redirect('/homepage');
+  })
+})
+
+//Logs user out and destroys session.
 router.get('/logout', function(req, res){
   res.redirect('/');
 })

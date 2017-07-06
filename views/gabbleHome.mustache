@@ -6,14 +6,19 @@
   </head>
   <body>
     <header>
-      <a href="/gabbleHome">Gabble |</a>
+      <a href="/homepage">Gabble |</a>
       <a href="/gab"> | Create a New Gab |</a>
       <a href="/logout"> Log Out</a>
     </header>
     <h1>Gabble</h1>
     {{#userPosts}}
-    <h3 class='username'>{{user.name}}</h3>
+    <p class='username'>{{user.name}}</p>
     <p>{{content}}</p>
+    <p class='likes'>Likes {{postLikes.length}}</p>
+    <form method="post" action="/likes"><button name="like_button" value="{{id}}" type="submit">Like</button></form>
+    <form method="post" action="/delete"><button name="delete_button" value="{{id}}" type="submit">Delete</button></form>
+    <hr>
     {{/userPosts}}
+
   </body>
 </html>
