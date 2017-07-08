@@ -53,7 +53,7 @@ font-family: 'Fruktur', cursive;
   left: 0;
   bottom: 0;
   right: 0;
-  position: absolute;
+  position: fixed;
   z-index: -1;
 }
 
@@ -146,13 +146,57 @@ Home Page Styling
   display: grid;
   grid-template-columns: 20% 60% 20%;
   background-color: white;
-  opacity: .6;
+  opacity: .9;
   z-index: 0;
 }
-
 
 .navlinks {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.heading form {
+  margin:2.5% 10% 0 10%;
+  display: flex;
+}
+
+.heading form textarea {
+  height: 10vh;
+  width: 70%;
+  margin: 0;
+}
+
+.heading form button {
+  width: 20%;
+  margin-left: 5%;
+}
+
+.post-container {
+  background-color: white;
+  opacity: .8;
+  border-radius: 10px;
+  z-index: 0;
+  margin: 5% 0;
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+.post-content-container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.username {
+  font-family: 'Fresca', sans-serif;
+  font-size: 2em;
+  margin: 0;
+}
+
+.content {
+  font-family: 'Oxygen', sans-serif;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
 }
