@@ -46,7 +46,7 @@ font-family: 'Fruktur', cursive;
   background-image: url('./BearGrass.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  /*background-position: */
   z-index: -1;
   opacity: 0.5;
   top: 0;
@@ -59,11 +59,15 @@ font-family: 'Fruktur', cursive;
 
 .headline {
   font-family: 'Fresca', sans-serif;
-  color: #225378;
-  font-size: 4em;
+  color: #666356;
+  font-size: 5em;
   text-align: center;
   flex-basis: 100%;
+  margin: 0;
+  transition: .2s ease-in-out;
 }
+
+.headline:hover { transform: scale(1.1); }
 
 .dogBone {
   background-image: url('./dogbone.png');
@@ -74,8 +78,9 @@ font-family: 'Fruktur', cursive;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
-  height: 17vw;
+  height: 13vw;
   opacity: .8;
+  margin: 0;
 }
 
 
@@ -83,29 +88,28 @@ font-family: 'Fruktur', cursive;
   font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
   font-size: 2em;
-  width: 60%;
+  width: 20vw;
   height: 5vw;
   margin:10% 0;
-  color:  #F3FFE2;
+  color:  #666356;
   border-top: none;
   border-left: none;
   border-right: none;
-  border-bottom: 2px solid #EB7F00;
   outline: none;
   z-index: 2;
 }
 
 .loginButton {
   flex-basis: 100%;
-  width: 30%;
-  margin:0 35%;
+  width: 26%;
+  margin: 0 37%;
   border-radius: 10px;
-  background-color: #EB7F00;
-  color:#225378;
+  background-color: #EAEAE9;
+  color:#666356;
   border: 0 solid white;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 2em;
-  box-shadow: 5px 5px 10px #F3FFE2;
+  box-shadow: 5px 5px 10px #EAEAE9;
 }
 
 .loginButton:active {
@@ -118,8 +122,9 @@ font-family: 'Fruktur', cursive;
   text-align: center;
   flex-basis: 100%;
   width: 30%;
-  margin:10% 35%;
-  color:#F3FFE2;
+  padding: 0;
+  margin: 0 35%;
+  color:#EAEAE9;
   text-decoration: none;
 }
 
@@ -134,4 +139,20 @@ Home Page Styling
 .gabble {
   text-shadow:2px 2px 4px #F3FFE2;
   margin: 0;
+  z-index: 1;
+}
+
+.navBar {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  background-color: white;
+  opacity: .6;
+  z-index: 0;
+}
+
+
+.navlinks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

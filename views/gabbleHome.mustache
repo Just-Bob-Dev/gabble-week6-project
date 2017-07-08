@@ -2,22 +2,28 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Open+Sans|Oxygen|Source+Sans+Pro" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Open+Sans|Oxygen|Source+Sans+Pro|Fresca" rel="stylesheet"/>
     <link rel="stylesheet" href="styles.css"/>
-    <title>Gabble Home</title>
+    <title>BARKLER</title>
   </head>
   <body>
     <header class="navBar">
-      <h1 class="headline gabble">Gabble</h1>
-      <form method="post" action="/postGab">
-      <textarea type="text" class="postGab" name="gabContent" value="" placeholder="Whats on your mind? Gab about it."></textarea>
-      <button type="submit">GAB</button>
-      </form>
-      <nav>
-        <a href="/homepage">Gabble</a>
-        <a href="/gab">Create a New Gab</a>
-        <a href="/logout">Log Out</a>
-      </nav>
+      <div class="heading">
+        <h1 class="headline gabble">BARKLER</h1>
+      </div>
+      <div class="heading">
+        <form method="post" action="/postGab">
+        <textarea type="text" class="postGab" name="gabContent" value="" placeholder="Whats on your mind? Gab about it."></textarea>
+        <button type="submit">BARK</button>
+        </form>
+      </div>
+      <div class="heading">
+        <nav class="navlinks">
+          <a href="/homepage">Gabble</a>
+          <a href="/gab">Create a New Gab</a>
+          <a href="/logout">Log Out</a>
+        </nav>
+      </div>
     </header>
     <div class="container posts">
       {{#userPosts}}
