@@ -2,18 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Fresca|Fruktur" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"/>
     <title>Login Page</title>
   </head>
   <body>
-    <h1> Please Login Below </h1>
-    <form action="/" method="post">
-      <label>Username</label>
-      <input type='text' name='username' value='' placeholder="Input username" autofocus="autofocus">
+    <div class='login container'>
+      <h1 class="headline">BARKLER</h1>
+      <form class="loginForm" action="/" method="post">
+        <div class="dogBone">
+          <input type='text' name='username' value='' placeholder="username" autofocus="autofocus">
+        </div>
+        <br>
+        <div class="dogBone">
+          <input type='password' name='password' value='' placeholder="password">
+        </div>
+        <br>
+        <button class="loginButton" type='submit'>login</button>
+      </form>
       <br>
-      <label>Password</label>
-      <input type='password' name='password' value='' placeholder="Input password">
-      <button type='submit'>submit</button>
-    </form>
-    <p>If you don't have a login click <a href="/createUser">here</a> to create one.</p>
+      <a href="/createUser" class="signup">sign up</a>
+    </div>
   </body>
 </html>

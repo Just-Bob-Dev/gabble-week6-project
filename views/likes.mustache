@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Open+Sans|Oxygen|Source+Sans+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"/>
+    <title>Gabble Home</title>
+  </head>
+  <body>
+    <header class="navBar">
+      <h1>Gabble</h1>
+      <nav>
+        <a href="/homepage">Gabble |</a>
+        <a href="/gab"> | Create a New Gab |</a>
+        <a href="/logout"> Log Out</a>
+      </nav>
+    </header>
+
+    {{#userPosts}}
+      <h2 class='username'>{{user.name}}</h2>
+      <p>{{content}}</p>
+      <h3 class="likes-Heading">Likes</h3>
+      <ul>
+        {{#postLikes}}
+        {{#userLike}}
+          <li>{{name}}</li>
+          {{/userLike}}
+        {{/postLikes}}
+      </ul>
+    {{/userPosts}}
+  </body>
+</html>

@@ -2,23 +2,40 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Open+Sans|Oxygen|Source+Sans+Pro" rel="stylesheet"/>
+    <link rel="stylesheet" href="styles.css"/>
     <title>Gabble Home</title>
   </head>
   <body>
-    <header>
-      <a href="/homepage">Gabble |</a>
-      <a href="/gab"> | Create a New Gab |</a>
-      <a href="/logout"> Log Out</a>
+    <header class="navBar">
+      <h1 class="headline gabble">Gabble</h1>
+      <form method="post" action="/postGab">
+      <textarea type="text" class="postGab" name="gabContent" value="" placeholder="Whats on your mind? Gab about it."></textarea>
+      <button type="submit">GAB</button>
+      </form>
+      <nav>
+        <a href="/homepage">Gabble</a>
+        <a href="/gab">Create a New Gab</a>
+        <a href="/logout">Log Out</a>
+      </nav>
     </header>
-    <h1>Gabble</h1>
-    {{#userPosts}}
-    <p class='username'>{{user.name}}</p>
-    <p>{{content}}</p>
-    <p class='likes'>Likes {{postLikes.length}}</p>
-    <form method="post" action="/likes"><button name="like_button" value="{{id}}" type="submit">Like</button></form>
-    <form method="post" action="/delete"><button name="delete_button" value="{{id}}" type="submit">Delete</button></form>
-    <hr>
-    {{/userPosts}}
-
+    <div class="container posts">
+      {{#userPosts}}
+        <div class="post-container">
+          <div class="post-content-container">
+            <p class='username'>{{user.name}}</p>
+            <p class="post-content">{{content}}</p>
+            <p class='likes'><a href="/homepage/liked/{{id}}">Likes</a> {{postLikes.length}}</p>
+          </div>
+          <div class="button-container">
+            <form method="post" action="/likes"><button name="like_button" value="{{id}}" type="submit"> Like </button>
+            </form>
+            <br>
+            <form method="post" action="/delete"><button name="delete_button" value="{{id}}" type="submit"> Delete </button>
+            </form>
+          </div>
+        </div>
+      {{/userPosts}}
+    </div>
   </body>
 </html>

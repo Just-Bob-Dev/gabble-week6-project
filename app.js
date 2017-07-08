@@ -22,19 +22,6 @@ app.use(session({
   saveUninitialized: true
 }));
 
-// const user = models.user.build({
-//   name: 'Robert',
-//   password: 'chillen'
-// })
-//
-// user.save();
-//
-// const post = models.post.build({
-//   content: 'I really did love class today!',
-//   userId: 1
-// })
-//
-// post.save();
 
 app.use('/', router);
 
